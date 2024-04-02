@@ -174,6 +174,8 @@ function moveBall() {
         ball.dx = -1 * ball.dx
     }
 }
+//paddle collision
+
 
 // Update canvas drawing and animation
 function update() {
