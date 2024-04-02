@@ -180,7 +180,7 @@ if (
     ball.x + ball.size < paddle.x + paddle.w &&
     ball.y + ball.size > paddle.y
 ){
-    ball.dy = -1 * ball.dy
+    ball.dy = -1 * ball.speed
 
 //brick collision
 bricks.forEach(column =>{
@@ -189,7 +189,7 @@ bricks.forEach(column =>{
             if(
                 ball.x - ball.size > brick.x && //left brick side
                 ball.x + ball.size < brick.x + brick.w && //right
-                
+
                 ball.y - ball.size < brick.y + brick.h //bottom
             )
             ball.dy = -1 * ball.dy
