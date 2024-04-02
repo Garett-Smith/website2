@@ -203,6 +203,17 @@ bricks.forEach(column =>{
 //increase score
 function increaseScore(){
     score++ //score = score + 1
+    if (score ==b brickRowCount * brickColumnCount){
+        score = 0
+        showAllBricks()
+    }
+}
+function showAllBricks(){
+    brick.forEach(column => {
+        column.forEach(brick =>{
+            brick.visible = true
+        })
+    })
 }
 // Update canvas drawing and animation
 function update() {
