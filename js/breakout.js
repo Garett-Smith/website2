@@ -173,7 +173,7 @@ function moveBall() {
     if(ball.x + ball.size < 0) {
         ball.dx = -1 * ball.dx
     }
-}
+
 //paddle collision
 if (
     ball.x - ball.size > paddle.x &&
@@ -191,12 +191,18 @@ bricks.forEach(column =>{
                 ball.x + ball.size < brick.x + brick.w && //right
 
                 ball.y - ball.size < brick.y + brick.h //bottom
-            )
+            ){
             ball.dy = -1 * ball.dy
             brick.visible = false
         }
+    }
     })
 })
+}
+}
+//increase score
+function increaseScore(){
+    score++ //score = score + 1
 }
 // Update canvas drawing and animation
 function update() {
