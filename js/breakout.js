@@ -3,6 +3,7 @@ close = document.getElementById('close-btn')
 rules = document.getElementById('rules')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
+let start = document.getElementById('start');
 
 score = 0
 BrickRowCount = 9
@@ -163,13 +164,33 @@ function draw() {
     drawScore()
     drawBricks()
 }
+let isGameOver = false;
+if(ball.y + ball.size > canvas.height){
+    isGameOver = true;
+}
+
+let animationId;
+let isPaused = false;
+start.addEventListener('click', function() {
+    isPaused = !isPaused;
+    if (isPaused) {
+        requestAnimationFrame(update);
+    }
+});
+
+
 
 function update() {
+    //if (isPaused || !isGameOver) {
+    if (isPaused) {
     moveBall()
     movePaddle()
     draw()
-    requestAnimationFrame(update)
+    requestAnimationFrame(update);
+    }
+
 }
+
 
 update()
 
